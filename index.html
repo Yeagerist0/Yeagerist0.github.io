@@ -336,6 +336,67 @@
   @media (prefers-reduced-motion: no-preference) {
     a { transition: color .15s ease; }
   }
+
+  /* 2026 visual refresh: an editorial security lab, with the original research intact. */
+  :root {
+    --bg:#080b10; --surface:#10161e; --surface-2:#151e28; --ink:#edf3f4;
+    --ink-2:#a1b1b6; --ink-3:#73858b; --rule:#26343b; --rule-2:#3b5056;
+    --accent:#b9f45b; --accent-2:#d1ff84; --accent-bg:#202c17;
+    --warn:#ffb454; --warn-bg:#352719; --critical:#ff6b55;
+    --grid:rgba(185,244,91,.045); --shadow:0 22px 60px rgba(0,0,0,.32);
+  }
+  html { scroll-behavior:smooth; scroll-padding-top:84px; }
+  body { background:var(--bg); font-size:16px; }
+  .wrap { max-width:1160px; }
+  .masthead { position:sticky; top:0; z-index:10; backdrop-filter:blur(18px); background:rgba(8,11,16,.88); border-color:var(--rule); }
+  .masthead-inner { padding:18px 0; align-items:center; }
+  h1 { font-size:24px; letter-spacing:-.04em; }
+  .h1-sub { margin-top:6px; font-size:10px; color:var(--ink-2); letter-spacing:.12em; }
+  .contact-row { gap:18px; font-size:11px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { color:var(--accent-2); }
+  .hero { position:relative; isolation:isolate; padding:94px 0 62px!important; border-bottom:1px solid var(--rule)!important; }
+  .hero:before { content:""; position:absolute; z-index:-1; width:min(60vw,720px); height:520px; right:-10%; top:0; background:radial-gradient(ellipse,rgba(92,133,48,.16),transparent 68%); pointer-events:none; }
+  .hero:after { content:"HJ / FIELD NOTES — 2026"; position:absolute; right:0; top:46px; color:var(--ink-3); font:10px "JetBrains Mono",monospace; letter-spacing:.12em; }
+  .hero .measure { max-width:790px; }
+  .hero .measure:before { content:"INDEPENDENT SECURITY ENGINEER  ·  BENGALURU, IN"; display:block; margin-bottom:24px; color:var(--accent); font:11px "JetBrains Mono",monospace; letter-spacing:.13em; }
+  .thesis { max-width:790px; font:600 clamp(36px,6.6vw,76px)/1.02 Archivo,sans-serif; letter-spacing:-.055em; }
+  .thesis em { color:var(--accent); }
+  .hero p { max-width:68ch; font-size:17px; }
+  .figure { margin-top:42px; border-color:#34434a; border-radius:10px; background:linear-gradient(135deg,#111923,#0d1218); box-shadow:var(--shadow); }
+  .figure-head { padding:18px 22px; }
+  .figure-head strong { color:var(--ink); }
+  .figure-body { padding-top:30px; }
+  section { padding:76px 0; }
+  .sec-head { margin-bottom:12px; }
+  .sec-head h2 { color:var(--accent); }
+  .sec-intro { margin-bottom:34px; }
+  .project { margin:22px 0; padding:32px; border:1px solid var(--rule); border-radius:10px; background:linear-gradient(145deg,rgba(18,26,35,.92),rgba(12,17,23,.92)); transition:border-color .2s,transform .2s; }
+  .project:hover { border-color:#617345; transform:translateY(-3px); }
+  .project:first-of-type { padding-top:32px; }
+  .project-grid { gap:28px 50px; }
+  .project h3 { font-size:clamp(24px,3vw,32px); letter-spacing:-.04em; }
+  .stack { color:var(--accent); font-size:11px; }
+  .lede { color:var(--ink); }
+  .evidence { border-color:var(--rule); border-radius:8px; background:rgba(7,11,15,.58); }
+  .chip { border-radius:999px; }
+  .notes { gap:14px; }
+  .note { padding:24px; border:1px solid var(--rule); border-radius:9px; background:var(--surface); }
+  footer { border-top:1px solid var(--rule); background:#07090d; }
+  .colophon { max-width:52ch; }
+  @media (max-width:700px) {
+    .wrap { padding-left:20px; padding-right:20px; }
+    .masthead-inner { gap:12px; }
+    .contact-row { width:100%; justify-content:space-between; }
+    .hero { padding-top:70px!important; }
+    .hero:after { top:24px; font-size:9px; }
+    .hero .measure:before { max-width:28ch; line-height:1.8; }
+    .project { padding:23px 19px; }
+    .project:first-of-type { padding-top:23px; }
+    section { padding:56px 0; }
+    .figure-body { padding-left:12px; padding-right:12px; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .project { transition:none; } }
 </style>
 
 </head>
@@ -351,6 +412,9 @@
       <a href="mailto:jainhitarth963@gmail.com">jainhitarth963@gmail.com</a>
     </div>
   </div>
+  <nav aria-label="Main navigation" class="wrap" style="display:flex;gap:24px;padding-bottom:14px;font:10px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase">
+    <a href="#work">Selected work ↘</a><a href="#research">Research ↘</a><a href="#approach">Approach ↘</a>
+  </nav>
 </header>
 
 <main>
@@ -434,7 +498,7 @@
       </figure>
     </section>
 
-    <section>
+    <section id="work">
       <div class="sec-head">
         <h2>Work</h2>
         <span class="rule"></span>
@@ -678,7 +742,7 @@
       </article>
     </section>
 
-    <section>
+    <section id="research">
       <div class="sec-head">
         <h2>Security research</h2>
         <span class="rule"></span>
@@ -722,7 +786,7 @@
       </div>
     </section>
 
-    <section style="border-bottom:none;">
+    <section id="approach" style="border-bottom:none;">
       <div class="sec-head">
         <h2>How I work</h2>
         <span class="rule"></span>
